@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
+/*   By: rivasque <rivasque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 19:19:45 by ritavasques       #+#    #+#             */
-/*   Updated: 2025/03/31 20:30:21 by ritavasques      ###   ########.fr       */
+/*   Updated: 2025/04/01 18:07:48 by rivasque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ template< typename T >
 class Array {
     public:
         Array(void) {
-            _size = 0;
+            _size = 1;
             _array = new T[1];
             _array[0] = 0;
         }
@@ -33,7 +33,7 @@ class Array {
             _size = other._size;
             _array = new T[other._size];
             for (unsigned int i = 0; i < _size; i++)
-                _array[i] = other_array[i];
+                _array[i] = other._array[i];
         }
         
         ~Array(void) {
@@ -45,7 +45,7 @@ class Array {
             _size = other._size;
             _array = new T[other._size];
             for (unsigned int i = 0; i < _size; i++)
-                _array[i] = other_array[i];
+                _array[i] = other._array[i];
             return *this;
         }
         
@@ -63,7 +63,7 @@ class Array {
     private:
         T*              _array;
         unsigned int    _size;
-}
+};
 
 template< typename T>
 void print(T const & element) {
