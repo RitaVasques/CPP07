@@ -6,7 +6,7 @@
 /*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 19:19:32 by ritavasques       #+#    #+#             */
-/*   Updated: 2025/04/02 14:14:33 by ritavasques      ###   ########.fr       */
+/*   Updated: 2025/04/03 10:34:01 by ritavasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,11 @@ int main(void) {
     return 0;
 }
 
-
+//Expected Output:
+//Index out of range - from numbers[-2] (implicit converted to a huge unsigned number)
+//Unsigned only positive numbers
+//Index out of range - from numbers[MAX_VAL] (MAX_VAL - 1 is the last valid index)
+//Index 0 1st element - 749 Last element (numbers[max_values] index 750, don't exist.
 /*int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -110,6 +114,8 @@ int main(void) {
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
+        //For numbers[MAX_VAL - 1]
+        //std::cout << numbers[i] << std::endl;
     }
     delete [] mirror;//
     return 0;
